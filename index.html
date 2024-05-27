@@ -57,5 +57,39 @@
     <button type="submit">Join Waitlist</button>
         </form>
     </div>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const form = document.querySelector("form");
+        const emailInput = document.querySelector('input[type="email"]');
+
+        form.addEventListener("submit", async (event) => {
+            event.preventDefault(); // Prevent the default form submission behavior
+
+            const user_email = emailInput.value; // Get the user's email address
+
+            try {
+                const response = await fetch("/sendEmail", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({ user_email }), // Send the email address as JSON
+                });
+
+                if (response.ok) {
+                    console.log("Email sent successfully!");
+                    // You can display a success message to the user here
+                } else {
+                    console.error("Email sending failed.");
+                    // Handle the error (e.g., display an error message)
+                }
+            } catch (error) {
+                console.error("An error occurred:", error);
+                // Handle any other errors (e.g., network issues)
+            }
+        });
+    });
+</script>
+
 </body>
 </html>
