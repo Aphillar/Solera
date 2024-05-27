@@ -1,53 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Solera - Waitlist</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
-            text-align: center;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000000;
+            color: white; /* Set text color to white */
         }
-        .container {
-            max-width: 600px;
+
+        #Main {
+            align-items: center;
+            width: auto; /* Adjusted to support text size */
+            height: 209.6px;
+            background-color: #000000;
             margin: 0 auto;
-            padding: 20px;
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Center text in the div */
         }
-        h1 {
-            color: #333;
-        }
-        p {
-            color: #777;
-        }
-        input[type="email"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
+
+        input[type="email"],
         button {
-            background-color: #007bff;
-            color: #fff;
+            width: 50%;
+            padding: 10px;
+            margin: 5px 0;
             border: none;
             border-radius: 5px;
-            padding: 10px 20px;
+            background-color: white;
+            color: black;
+        }
+
+        button {
+            width: 53%;
+            background-color: #007bff;
+            color: white;
             cursor: pointer;
+        }
+        #CText {
+            font-weight: bold;
+            font-size: 18px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Join Our Waitlist!</h1>
-        <p>Be the first to know when Solera (roblox group management solution) launches.</p>
-        <form action="process_waitlist.php" method="post">
-            <input type="email" name="email" placeholder="Enter your email address" required>
-            <button type="submit">Join Now</button>
+    <div id="Main">
+        <h3>
+            <span style="font-weight: bold; font-size: 50px; color: #007bff;">Solera</span> <span style="font-size: 50px;">Roblox group management</span>
+        </h3>
+        <p id="CText">Sign up for the waitlist!</p>
+        <form>
+            <input type="email" placeholder="Enter your email">
+            <button type="submit">Join Waitlist</button>
         </form>
     </div>
 </body>
