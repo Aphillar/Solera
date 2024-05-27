@@ -1,9 +1,9 @@
-<?php>
+<?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $to = "Solera.Ownership@outlook.com";
+    $to = $_POST['user_email'];
     $subject = "Solera | Waitlist";
     $message = "sup";
-    $headers = "From: your-email@example.com"; // Update with your email address
+    $headers = "From: Solera.Ownership@outlook.com";
 
     if (mail($to, $subject, $message, $headers)) {
         echo "Email sent successfully!";
@@ -11,4 +11,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Email sending failed.";
     }
 }
-<?php>
+?>
